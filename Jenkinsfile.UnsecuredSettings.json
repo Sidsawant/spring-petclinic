@@ -1,0 +1,82 @@
+{
+    "ApiGatewayClientCertExportName": {
+        "Dev": "vpc-dev-ClientCertificate-2018",
+        "Int": "vpc-int-ClientCertificate-2018",
+        "Pre": "vpc-pre-ClientCertificate-2018",
+        "Prod": "vpc-prod-ClientCertificate-2018"
+    },
+    "AuthApiRefreshTokenTime": {
+        "Default": "599"
+    },
+    "AuthApiUserName": {
+        "Default": "criminal.int@api.sterlingbackcheck.com",
+        "Prod": "criminal.prod@api.sterlingbackcheck.com"
+    },
+    "AuthEnvironment": {
+        "Default": "int",
+        "Prod": "prod"
+    },
+    "AutoScaleRollingUpdates": {
+        "Default": "false",
+        "Int": "true",
+        "Prod": "true"
+    },
+    "BackupFlag": {
+        "Default": "no"
+    },
+    "BeanstalkAutoScaleMinMaxSize": {
+        "Default": "1,1",
+        "Int": "2,2",
+        "Pre": "2,2",
+        "Prod": "2,2"
+    },
+    "BeanstalkInstanceType": {
+        "Default": "t2.micro",
+        "Int": "t2.medium",
+        "Pre": "t2.medium",
+        "Prod": "c4.large"
+    },
+    "CodeDeployDeploymentConfig": {
+        "Default": "CodeDeployDefault.AllAtOnce",
+        "Int": "CodeDeployDefault.OneAtATime",
+        "Prod": "CodeDeployDefault.OneAtATime"
+    },
+    "ConnectorAutoScaleMinMaxSize": {
+        "Default": "1,1",
+        "Int": "2,2",
+        "Pre": "2,2",
+        "Prod": "2,2"
+    },
+    "ConnectorInstanceType": {
+        "Default": "t2.micro",
+        "Int": "t2.medium",
+        "Pre": "t2.medium",
+        "Prod": "c4.large"
+    },
+    "DeployTimeout": {
+        "Default": "PT30M"
+    },
+    "DeploymentPolicy": {
+        "Default": "AllAtOnce",
+        "Int": "Rolling",
+        "Prod": "Rolling"
+    },
+    "IgnoreHealthCheck": {
+        "Default": "true",
+        "Prod": "false"
+    },
+    "MonitoredFlag": {
+        "Default": "no",
+        "Prod": "yes"
+    },
+    "VifCallbackEnv": {
+        "Dev": "sandbox.dev",
+        "Int": "prod.int",
+        "Pre": "prod.pre",
+        "Prod": "prod.prod"
+    },
+    "VifEnv": {
+        "Default": "int",
+        "Prod": "prod"
+    }
+}
