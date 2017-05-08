@@ -5,7 +5,7 @@ def flags = new BranchFlags("${env.BRANCH_NAME}")
 
 
 def context = [
-        node                : "linux1",
+//        node                : "linux1",
         branchName          : flags._branchName,
         application         : "smartdata",
         applicationVersion  : "",
