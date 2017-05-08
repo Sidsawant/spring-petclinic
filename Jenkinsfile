@@ -43,7 +43,7 @@ properties([
         pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1m']])
 ])
 
-lock("${context.application}-${context.branchName}-build") {
+
     node(context.node) {
         ws("${context.jenkinsWorkspace}") {
             try {
@@ -97,7 +97,7 @@ lock("${context.application}-${context.branchName}-build") {
             }
         }
     }
-}
+
 
 @NonCPS
 def parseJson(inputData) {
