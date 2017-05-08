@@ -59,15 +59,10 @@ properties([
                    // context.settings = parseJson(inputData)
                 }
 
-                //def s3 = load("pipeline/aws/s3.groovy")
+                
                 def maven = load("pipeline/java/maven.groovy")
 
-                stage("Build") {
-                  maven.build([
-                    awsAccount: context.awsAccountNumber,
-                    version: context.version,
-                    awsRegion: context.region
-                    ])
+                
                 }
 
                 stage("Unit Tests") {
