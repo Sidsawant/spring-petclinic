@@ -48,13 +48,14 @@ properties([
         ws("${context.jenkinsWorkspace}") {
             try {
                 // def gitVersionOutput = null
+				echo("test")
                 stage("SCM") {
                     checkout scm
                     // gitVersionOutput = getGitVersionOutput()
                     // context.applicationVersion = "${gitVersionOutput.GitVersion_NuGetVersionV2}"
                     // echo("context.applicationVersion: ${context.applicationVersion}")
 
-                    def inputData = readFile('Jenkinsfile.UnsecuredSettings.json')
+                    def inputData = 	('Jenkinsfile.UnsecuredSettings.json')
                     context.settings = parseJson(inputData)
                 }
 
