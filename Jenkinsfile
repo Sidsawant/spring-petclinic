@@ -65,7 +65,7 @@ properties([
                 //def s3 = load("pipeline/aws/s3.groovy")
                 //def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
-				echo(${javaHome})
+				echo('===========starting build=============================')
 				withEnv(["JAVA_HOME=${tool '1.8'}"]) {
 				 bat "${mvnHome}/bin/mvn install"
     // some block
