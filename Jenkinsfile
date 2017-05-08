@@ -62,7 +62,7 @@ properties([
                 }
 
                 //def s3 = load("pipeline/aws/s3.groovy")
-                def maven = load("pipeline/java/maven.groovy")
+                //def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
 				echo('in build')
                  bat "${mvnHome}/bin/mvn install"
