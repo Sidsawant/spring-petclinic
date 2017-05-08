@@ -67,7 +67,7 @@ properties([
                 def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
 				echo('in build')
-                  mvn --version
+                 bat  mvn install
 				}
 
                 stage("Unit Tests") {
