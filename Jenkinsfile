@@ -49,6 +49,7 @@ properties([
             try {
 			
 			 def mvnHome = tool 'maven311'
+			 def javaHome = tool '1.8'
                 // def gitVersionOutput = null
 				echo("test")
                 stage("SCM") {
@@ -65,7 +66,11 @@ properties([
                 //def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
 				echo('in build')
-                 bat "${mvnHome}/bin/mvn install"
+				withEnv(['JAVA_HOME=${javaHome}']) {
+				 bat "${mvnHome}/bin/mvn install"
+    // some block
+}
+                
 				}
 
                 stage("Unit Tests") {
