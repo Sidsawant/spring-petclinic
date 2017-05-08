@@ -66,7 +66,7 @@ properties([
                   maven.build([
                     
                     ])
-              
+				}
 
                 stage("Unit Tests") {
                 }
