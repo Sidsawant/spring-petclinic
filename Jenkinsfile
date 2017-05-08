@@ -66,7 +66,7 @@ properties([
                 //def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
 				echo(${javaHome})
-				withEnv(['JAVA_HOME=C:\Program Files\Java\jdk1.8.0_131']) {
+				withEnv(["JAVA_HOME=${tool '1.8'}"]) {
 				 bat "${mvnHome}/bin/mvn install"
     // some block
 }
