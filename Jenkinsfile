@@ -40,7 +40,6 @@ println "Build number='${env.BUILD_NUMBER}'"
 properties([
         disableConcurrentBuilds(),
         buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')),
-        [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
         pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1m']])
 ])
 
