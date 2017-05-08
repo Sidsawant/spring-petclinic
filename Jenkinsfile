@@ -63,7 +63,7 @@ properties([
                 //def s3 = load("pipeline/aws/s3.groovy")
                 def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
-				echo("in build)
+				echo('in build')
                   maven.build([
                     
                     ])
