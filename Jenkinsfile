@@ -47,6 +47,7 @@ properties([
     node(context.node) {
         ws("${context.jenkinsWorkspace}") {
             try {
+			
                 // def gitVersionOutput = null
 				echo("test")
                 stage("SCM") {
@@ -61,7 +62,10 @@ properties([
 
                 //def s3 = load("pipeline/aws/s3.groovy")
                 def maven = load("pipeline/java/maven.groovy")
-
+				stage("Build") {
+                  maven.build([
+                    
+                    ])
               
 
                 stage("Unit Tests") {
