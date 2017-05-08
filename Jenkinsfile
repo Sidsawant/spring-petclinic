@@ -55,11 +55,11 @@ properties([
                     // context.applicationVersion = "${gitVersionOutput.GitVersion_NuGetVersionV2}"
                     // echo("context.applicationVersion: ${context.applicationVersion}")
 
-                    def inputData = 	('Jenkinsfile.UnsecuredSettings.json')
-                    context.settings = parseJson(inputData)
+                    //def inputData = 	('Jenkinsfile.UnsecuredSettings.json')
+                   // context.settings = parseJson(inputData)
                 }
 
-                def s3 = load("pipeline/aws/s3.groovy")
+                //def s3 = load("pipeline/aws/s3.groovy")
                 def maven = load("pipeline/java/maven.groovy")
 
                 stage("Build") {
