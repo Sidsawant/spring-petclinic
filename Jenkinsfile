@@ -127,7 +127,7 @@ def getSetting(settings, settingName, environment) {
 }
 
 def echo(String message) {
-    sh "echo ${message}"
+    bat "echo ${message}"
 }
 
 String getBranchUuid(String branchName) {
