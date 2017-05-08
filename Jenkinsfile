@@ -48,8 +48,8 @@ properties([
         ws("${context.jenkinsWorkspace}") {
             try {
 			
-			 def mvnHome = tool 'maven311'
-			 def javaHome = tool '1.8'
+			
+			 
                 // def gitVersionOutput = null
 				echo("test")
                 stage("SCM") {
@@ -65,11 +65,7 @@ properties([
                 //def s3 = load("pipeline/aws/s3.groovy")
                 def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
-				echo('===========starting build=============================')
-				withEnv(["JAVA_HOME=${tool '1.8'}"]) {
-				 bat "${mvnHome}/bin/mvn install -DskipTests"
-    // some block
-}
+				maven.build()
                 
 				}
 
@@ -82,19 +78,7 @@ properties([
                 stage("Package") {
                 }
 
-                stage("Publish Artifacts") {
-                    s3.publish([
-                            bucket : context.bucket, region: context.region, account: context.awsAccount,
-                            entries: [
-                                    [flatten: true, file: "main_output/${context.main.artifactName}"],
-                                    [flatten: true, file: "receiver_output/${context.receiver.artifactName}"],
-                                    [flatten: true, file: "connector_output/${context.connector.artifactName}"],
-                                    [flatten: false, file: "infra/"]
-                            ]
-                    ])
-
-                    stash name: "${context.application}-${context.branchName}"
-                }
+                
             }
             finally {
                 step([$class: 'WsCleanup', notFailBuild: true])
