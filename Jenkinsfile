@@ -65,7 +65,11 @@ properties([
                 //def s3 = load("pipeline/aws/s3.groovy")
                 def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
-				maven.build()
+				maven.build([
+                    awsAccount: '1',
+                    version: '1',
+                    awsRegion: '12'
+                    ])
                 
 				}
 
