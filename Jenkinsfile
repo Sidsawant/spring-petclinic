@@ -67,7 +67,7 @@ properties([
 				stage("Build") {
 				echo('===========starting build=============================')
 				withEnv(["JAVA_HOME=${tool '1.8'}"]) {
-				 bat "${mvnHome}/bin/mvn install"
+				 bat "${mvnHome}/bin/mvn install -DskipTests"
     // some block
 }
                 
