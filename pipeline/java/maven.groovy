@@ -2,7 +2,7 @@
 
 def build(def args)
     sh """
-    ${tool 'Maven 3.1.0'} clean install -Dmaven.test.skip=true  -Daws.account=${args.awsAccount} -Daws.image.version=${args.version} -Daws.region=${args.awsRegion} -P aws-deploy -U -e
+    ${tool 'Maven 3.1.0'} clean install -Dmaven.test.skip=true  -Daws.account=1111 -Daws.image.version=222 -Daws.region=3333 -P aws-deploy -U -e
     """
 }
 
