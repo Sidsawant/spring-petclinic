@@ -48,6 +48,9 @@ properties([
         ws("${context.jenkinsWorkspace}") {
             try {
 			
+			tools {
+        maven 'maven311' 
+    }
                 // def gitVersionOutput = null
 				echo("test")
                 stage("SCM") {
@@ -64,9 +67,7 @@ properties([
                 def maven = load("pipeline/java/maven.groovy")
 				stage("Build") {
 				echo('in build')
-                  maven.build([
-                    
-                    ])
+                  mvn --version
 				}
 
                 stage("Unit Tests") {
